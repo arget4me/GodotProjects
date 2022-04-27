@@ -1,0 +1,164 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://platform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Area2D.gd" type="Script" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://IMG/Goal.png" type="Texture" id=4]
+[ext_resource path="res://Goal.gd" type="Script" id=5]
+[ext_resource path="res://new_dynamicfont.tres" type="DynamicFont" id=6]
+[ext_resource path="res://ImDaMaster.wav" type="AudioStream" id=7]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 66.25 )
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 616.02
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 20000, 400 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( -207, -136 )
+
+[node name="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -111, 445 )
+
+[node name="Node2D9" parent="." instance=ExtResource( 1 )]
+modulate = Color( 1, 0.282353, 0, 1 )
+self_modulate = Color( 0.462745, 0.937255, 0.827451, 1 )
+position = Vector2( 398, -68 )
+
+[node name="Node2D2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 247, 738 )
+
+[node name="Node2D10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 598, 453 )
+
+[node name="Node2D3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1204, 459 )
+
+[node name="Node2D4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1842, 580 )
+
+[node name="Node2D5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3147, 612 )
+
+[node name="Node2D6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 4387, 637 )
+
+[node name="Node2D7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3754, 487 )
+
+[node name="Node2D8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2517, 508 )
+
+[node name="Node2D11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 5045, 808 )
+
+[node name="Node2D12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 5683, 929 )
+
+[node name="Node2D13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 6988, 961 )
+
+[node name="Node2D14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 8228, 816 )
+
+[node name="Node2D15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 7595, 836 )
+
+[node name="Node2D16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 6358, 857 )
+
+[node name="Node2D17" parent="." instance=ExtResource( 1 )]
+position = Vector2( 9029, 894 )
+
+[node name="Node2D18" parent="." instance=ExtResource( 1 )]
+position = Vector2( 9667, 1015 )
+
+[node name="Node2D19" parent="." instance=ExtResource( 1 )]
+position = Vector2( 10972, 1047 )
+
+[node name="Node2D20" parent="." instance=ExtResource( 1 )]
+position = Vector2( 12212, 1072 )
+
+[node name="Node2D21" parent="." instance=ExtResource( 1 )]
+position = Vector2( 11579, 922 )
+
+[node name="Node2D22" parent="." instance=ExtResource( 1 )]
+position = Vector2( 10342, 943 )
+
+[node name="Node2D23" parent="." instance=ExtResource( 1 )]
+position = Vector2( 12737, 884 )
+
+[node name="Node2D24" parent="." instance=ExtResource( 1 )]
+position = Vector2( 13538, 962 )
+
+[node name="Node2D25" parent="." instance=ExtResource( 1 )]
+position = Vector2( 14176, 1083 )
+
+[node name="Node2D26" parent="." instance=ExtResource( 1 )]
+position = Vector2( 15481, 1115 )
+
+[node name="Node2D27" parent="." instance=ExtResource( 1 )]
+position = Vector2( 16721, 1140 )
+
+[node name="Node2D28" parent="." instance=ExtResource( 1 )]
+position = Vector2( 16088, 990 )
+
+[node name="Node2D29" parent="." instance=ExtResource( 1 )]
+position = Vector2( 14851, 1011 )
+
+[node name="Goal" type="Sprite" parent="."]
+position = Vector2( 335, -208 )
+texture = ExtResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="Goal"]
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal/Area2D"]
+position = Vector2( -11, 17 )
+shape = SubResource( 2 )
+
+[node name="YouRock" type="ColorRect" parent="Goal/Area2D"]
+visible = false
+margin_left = -1269.0
+margin_top = -778.0
+margin_right = 1242.0
+margin_bottom = 827.0
+color = Color( 0.054902, 0.054902, 0.164706, 0.572549 )
+
+[node name="YouRockLabel" type="Label" parent="Goal/Area2D/YouRock"]
+margin_left = 978.0
+margin_top = 543.0
+margin_right = 1604.0
+margin_bottom = 813.0
+custom_colors/font_color = Color( 0.843137, 0.627451, 0.0509804, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.34902, 0.129412, 0.0352941, 1 )
+custom_constants/shadow_offset_x = 4
+custom_constants/shadow_offset_y = 3
+custom_fonts/font = ExtResource( 6 )
+text = "You Rock!"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Goal/Area2D"]
+stream = ExtResource( 7 )
+
+[node name="Area2D" type="Area2D" parent="Goal/Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal/Area2D/Area2D"]
+position = Vector2( 78, -240 )
+shape = SubResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( -4, 1760 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Goal/Area2D" to="Goal/Area2D" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Goal/Area2D/Area2D" to="Goal/Area2D" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]

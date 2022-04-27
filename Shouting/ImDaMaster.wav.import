@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ImDaMaster.wav-3931ff039e01000ad6f9f6e6c69f7e35.sample"
+
+[deps]
+
+source_file="res://ImDaMaster.wav"
+dest_files=[ "res://.import/ImDaMaster.wav-3931ff039e01000ad6f9f6e6c69f7e35.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

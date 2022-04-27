@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ambient-piano-10781.mp3-58036ba06a1c64dd62722a49cd59c6cd.mp3str"
+
+[deps]
+
+source_file="res://ambient-piano-10781.mp3"
+dest_files=[ "res://.import/ambient-piano-10781.mp3-58036ba06a1c64dd62722a49cd59c6cd.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
