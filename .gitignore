@@ -14,3 +14,7 @@ build/*
 builds/*
 */build/*
 */builds/*
+ExternalAssets/*
+*/ExternalAssets/*
+Assets/FrogHavenArt/*
+ArtProjectFiles

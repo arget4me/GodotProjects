@@ -1,0 +1,150 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://FrogHavenArt/Characters/creature_walking.png" type="Texture" id=1]
+[ext_resource path="res://Frog.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Fly.tscn" type="PackedScene" id=3]
+[ext_resource path="res://FrogHavenArt/Characters/FlyLord.png" type="Texture" id=4]
+[ext_resource path="res://FrogHavenArt/Characters/flying_ladybug.png" type="Texture" id=5]
+[ext_resource path="res://FrogHavenArt/Characters/creature_flying.png" type="Texture" id=6]
+[ext_resource path="res://WiggleWobbleShader.tres" type="Shader" id=7]
+[ext_resource path="res://SimpleMove2D.gd" type="Script" id=8]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 7 )
+shader_param/AngleSpeed = 100.0
+shader_param/AngleMax = 0.05
+shader_param/AngleMin = -0.05
+shader_param/ScaleSpeed = 10.5
+shader_param/ScaleMax = 1.0
+shader_param/ScaleMin = 0.94
+shader_param/yAspectRatio = 1.0
+shader_param/pivot = Vector2( 0, 0 )
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 7 )
+shader_param/AngleSpeed = -30.0
+shader_param/AngleMax = 0.05
+shader_param/AngleMin = -0.05
+shader_param/ScaleSpeed = 17.0
+shader_param/ScaleMax = 1.02
+shader_param/ScaleMin = 0.9
+shader_param/yAspectRatio = 1.02
+shader_param/pivot = Vector2( 0, 0 )
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 7 )
+shader_param/AngleSpeed = 65.0
+shader_param/AngleMax = 0.72
+shader_param/AngleMin = 0.529
+shader_param/ScaleSpeed = 2.4
+shader_param/ScaleMax = 1.0
+shader_param/ScaleMin = 0.802
+shader_param/yAspectRatio = 1.0
+shader_param/pivot = Vector2( 0, 0 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 7 )
+shader_param/AngleSpeed = 1.0
+shader_param/AngleMax = 0.02
+shader_param/AngleMin = -0.02
+shader_param/ScaleSpeed = 0.8
+shader_param/ScaleMax = 1.0
+shader_param/ScaleMin = 0.85
+shader_param/yAspectRatio = 1.0
+shader_param/pivot = Vector2( 0, 0 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 7 )
+shader_param/AngleSpeed = 2.0
+shader_param/AngleMax = 0.05
+shader_param/AngleMin = -0.05
+shader_param/ScaleSpeed = 1.7
+shader_param/ScaleMax = 1.0
+shader_param/ScaleMin = 0.94
+shader_param/yAspectRatio = 1.0
+shader_param/pivot = Vector2( 0, 0 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="FlyLord" type="Sprite" parent="."]
+material = SubResource( 1 )
+position = Vector2( 642.25, 428.736 )
+scale = Vector2( 0.569824, 0.542453 )
+texture = ExtResource( 4 )
+
+[node name="FlyLord2" type="Sprite" parent="FlyLord"]
+modulate = Color( 1, 0.141176, 0, 0.164706 )
+material = SubResource( 5 )
+scale = Vector2( 1.04, 1.04 )
+texture = ExtResource( 4 )
+
+[node name="CreatureFlying" type="Sprite" parent="."]
+material = SubResource( 2 )
+position = Vector2( 295.75, 256.75 )
+scale = Vector2( 0.42627, 0.391113 )
+texture = ExtResource( 6 )
+
+[node name="CreatureWalking" type="Sprite" parent="."]
+material = SubResource( 3 )
+position = Vector2( 1458.25, 375.5 )
+scale = Vector2( 0.48584, 0.499023 )
+texture = ExtResource( 1 )
+
+[node name="FlyingLadybug" type="Sprite" parent="."]
+material = SubResource( 4 )
+position = Vector2( 231, 650 )
+scale = Vector2( 0.722656, 0.667969 )
+texture = ExtResource( 5 )
+
+[node name="FrogBody" parent="." instance=ExtResource( 2 )]
+position = Vector2( 992, 754 )
+script = ExtResource( 8 )
+speed = 400.0
+
+[node name="Fly" parent="." instance=ExtResource( 3 )]
+position = Vector2( 500, 834 )
+
+[node name="Fly3" parent="." instance=ExtResource( 3 )]
+modulate = Color( 0.223529, 0.321569, 0.945098, 1 )
+position = Vector2( 1066, 207 )
+scale = Vector2( 2.25, 2.25 )
+
+[node name="Fly2" parent="." instance=ExtResource( 3 )]
+modulate = Color( 0.137255, 0.74902, 0.317647, 1 )
+position = Vector2( 1333, 703 )
+
+[node name="Fly4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1619, 156 )
+
+[node name="Fly5" parent="." instance=ExtResource( 3 )]
+modulate = Color( 0.223529, 0.321569, 0.945098, 1 )
+position = Vector2( 373, 93 )
+scale = Vector2( 2.25, 2.25 )
+
+[node name="Fly6" parent="." instance=ExtResource( 3 )]
+modulate = Color( 0.137255, 0.74902, 0.317647, 1 )
+position = Vector2( 415, 555 )
+
+[node name="Fly7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 801, 1025 )
+
+[node name="Fly8" parent="." instance=ExtResource( 3 )]
+modulate = Color( 0.223529, 0.321569, 0.945098, 1 )
+position = Vector2( 1367, 398 )
+scale = Vector2( 2.25, 2.25 )
+
+[node name="Fly9" parent="." instance=ExtResource( 3 )]
+modulate = Color( 0.137255, 0.74902, 0.317647, 1 )
+position = Vector2( 1634, 894 )
+
+[node name="Fly10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1920, 347 )
+
+[node name="Fly11" parent="." instance=ExtResource( 3 )]
+modulate = Color( 0.223529, 0.321569, 0.945098, 1 )
+position = Vector2( 674, 284 )
+scale = Vector2( 2.25, 2.25 )
+
+[node name="Fly12" parent="." instance=ExtResource( 3 )]
+modulate = Color( 0.137255, 0.74902, 0.317647, 1 )
+position = Vector2( 716, 746 )

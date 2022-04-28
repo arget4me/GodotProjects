@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://WiggleWobbleShader.tres" type="Shader" id=1]
+[ext_resource path="res://FrogHavenArt/Characters/fly.png" type="Texture" id=2]
+[ext_resource path="res://Fly.gd" type="Script" id=3]
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 1 )
+shader_param/AngleSpeed = 45.0
+shader_param/AngleMax = 0.693
+shader_param/AngleMin = -1.02
+shader_param/ScaleSpeed = 2.5
+shader_param/ScaleMax = 1.0
+shader_param/ScaleMin = 0.94
+shader_param/yAspectRatio = 0.344
+shader_param/pivot = Vector2( 19.252, 0 )
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = ExtResource( 1 )
+shader_param/AngleSpeed = -45.0
+shader_param/AngleMax = 0.693
+shader_param/AngleMin = -1.02
+shader_param/ScaleSpeed = 2.5
+shader_param/ScaleMax = 1.0
+shader_param/ScaleMin = 0.94
+shader_param/yAspectRatio = 0.344
+shader_param/pivot = Vector2( -19.252, 0 )
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 21.5922
+
+[node name="Fly" type="Area2D"]
+modulate = Color( 0.85098, 0.305882, 0.305882, 1 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 3 )
+
+[node name="Wings" type="Node2D" parent="."]
+modulate = Color( 1, 1, 1, 0.403922 )
+
+[node name="LeftWing" type="Sprite" parent="Wings"]
+material = SubResource( 5 )
+position = Vector2( -34, 0 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+
+[node name="RightWing" type="Sprite" parent="Wings"]
+material = SubResource( 6 )
+position = Vector2( 35, 5 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+
+[node name="Body" type="Sprite" parent="."]
+position = Vector2( 0, 3 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 2.66667 )
+shape = SubResource( 7 )
+
+[connection signal="body_entered" from="." to="." method="_on_Fly_body_entered"]

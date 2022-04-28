@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://WiggleWobbleShader.tres" type="Shader" id=1]
+[ext_resource path="res://FrogHavenArt/Characters/frog_body.png" type="Texture" id=2]
+[ext_resource path="res://FrogHavenArt/Characters/frog_eye.png" type="Texture" id=3]
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 1 )
+shader_param/AngleSpeed = 10.0
+shader_param/AngleMax = 0.1
+shader_param/AngleMin = -0.1
+shader_param/ScaleSpeed = 2.5
+shader_param/ScaleMax = 1.0
+shader_param/ScaleMin = 0.94
+shader_param/yAspectRatio = 1.0
+shader_param/pivot = Vector2( 0, 0 )
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = ExtResource( 1 )
+shader_param/AngleSpeed = 10.0
+shader_param/AngleMax = 0.1
+shader_param/AngleMin = -0.1
+shader_param/ScaleSpeed = 2.5
+shader_param/ScaleMax = 1.0
+shader_param/ScaleMin = 0.94
+shader_param/yAspectRatio = 1.0
+shader_param/pivot = Vector2( -32, 32 )
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = ExtResource( 1 )
+shader_param/AngleSpeed = 10.0
+shader_param/AngleMax = 0.1
+shader_param/AngleMin = -0.1
+shader_param/ScaleSpeed = 2.5
+shader_param/ScaleMax = 1.0
+shader_param/ScaleMin = 0.94
+shader_param/yAspectRatio = 1.0
+shader_param/pivot = Vector2( 32, 32 )
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 85.5671
+
+[node name="FrogBody" type="Sprite"]
+material = SubResource( 5 )
+scale = Vector2( 0.712891, 0.734375 )
+texture = ExtResource( 2 )
+
+[node name="FrogEye" type="Sprite" parent="."]
+material = SubResource( 6 )
+position = Vector2( 52.6028, -67.3684 )
+texture = ExtResource( 3 )
+
+[node name="FrogEye2" type="Sprite" parent="."]
+material = SubResource( 7 )
+position = Vector2( -56.1096, -64 )
+texture = ExtResource( 3 )
+flip_h = true
+
+[node name="Area2D" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -1.052, 6.80853 )
+shape = SubResource( 8 )

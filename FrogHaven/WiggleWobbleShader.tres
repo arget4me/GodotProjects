@@ -1,0 +1,38 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+uniform float AngleSpeed = 70;
+uniform float AngleMax = 0.05;
+uniform float AngleMin = -0.05;
+
+uniform float ScaleSpeed = 2.5;
+uniform float ScaleMax = 1;
+uniform float ScaleMin = 0.94;
+
+uniform float yAspectRatio = 1.0;
+
+uniform vec2 pivot = vec2(0.0, 0.0);
+
+
+void vertex()
+{
+	float angle = AngleMin + (sin(TIME * AngleSpeed) + 1.0) / 2.0 * (AngleMax - AngleMin);
+	float scale = ScaleMin + (sin(TIME * ScaleSpeed) + 1.0) / 2.0 * (ScaleMax - ScaleMin);
+	
+	float x = VERTEX.x - pivot.x;
+	float y = VERTEX.y * yAspectRatio - pivot.y;
+	
+	float rotX = cos(angle) * x - sin(angle) * y + pivot.x;
+	float rotY = sin(angle) * x + cos(angle) * y + pivot.y;
+	
+	VERTEX = vec2(rotX * scale, rotY * scale);
+}
+
+void fragment()
+{
+	vec4 col = texture(TEXTURE, UV);
+	COLOR = col;
+}"
