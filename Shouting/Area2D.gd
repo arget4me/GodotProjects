@@ -17,4 +17,4 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
-	body.position = Vector2.ZERO
+	body.position = Vector2(0, -100)
