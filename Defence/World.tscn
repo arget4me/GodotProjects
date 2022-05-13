@@ -1,0 +1,158 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Platform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Node.tscn" type="PackedScene" id=3]
+[ext_resource path="res://WalkPoints.gd" type="Script" id=4]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://EnemyManager.gd" type="Script" id=6]
+
+[node name="World" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -153.0
+margin_top = -280.0
+margin_right = -113.0
+margin_bottom = -240.0
+rect_scale = Vector2( 33.2743, 30.8 )
+color = Color( 0.423529, 0.505882, 0.501961, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Platforms" type="Control" parent="."]
+modulate = Color( 0.0901961, 0.203922, 0.133333, 1 )
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Platform" parent="Platforms" instance=ExtResource( 1 )]
+position = Vector2( 523, 601 )
+scale = Vector2( 64.2, 4.52 )
+
+[node name="Platform2" parent="Platforms" instance=ExtResource( 1 )]
+position = Vector2( 510, 2 )
+scale = Vector2( 64.2, 4.52 )
+
+[node name="Platform3" parent="Platforms" instance=ExtResource( 1 )]
+position = Vector2( 1025, 288 )
+scale = Vector2( 4.2, 32.2 )
+
+[node name="Platform4" parent="Platforms" instance=ExtResource( 1 )]
+position = Vector2( -1, 312 )
+scale = Vector2( 4.2, 32.2 )
+
+[node name="Platform5" parent="Platforms" instance=ExtResource( 1 )]
+position = Vector2( 176, 307 )
+scale = Vector2( 1.16689, 11.608 )
+
+[node name="Platform6" parent="Platforms" instance=ExtResource( 1 )]
+position = Vector2( 846, 310 )
+scale = Vector2( 1.16689, 11.608 )
+
+[node name="Platform7" parent="Platforms" instance=ExtResource( 1 )]
+position = Vector2( 847, -7 )
+scale = Vector2( 1.16689, 11.608 )
+
+[node name="Platform8" parent="Platforms" instance=ExtResource( 1 )]
+position = Vector2( 177, -2 )
+scale = Vector2( 1.16689, 11.608 )
+
+[node name="Platform9" parent="Platforms" instance=ExtResource( 1 )]
+position = Vector2( 175, 619 )
+scale = Vector2( 1.16689, 11.608 )
+
+[node name="Platform10" parent="Platforms" instance=ExtResource( 1 )]
+position = Vector2( 848, 625 )
+scale = Vector2( 1.16689, 11.608 )
+
+[node name="WalkPoints" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 4 )
+
+[node name="Node2" parent="WalkPoints" instance=ExtResource( 3 )]
+position = Vector2( 179, 152 )
+
+[node name="Node12" parent="WalkPoints" instance=ExtResource( 3 )]
+position = Vector2( 343, 311 )
+
+[node name="Node13" parent="WalkPoints" instance=ExtResource( 3 )]
+position = Vector2( 685, 319 )
+
+[node name="Node14" parent="WalkPoints" instance=ExtResource( 3 )]
+position = Vector2( 684, 88 )
+
+[node name="Node15" parent="WalkPoints" instance=ExtResource( 3 )]
+position = Vector2( 344, 86 )
+
+[node name="Node16" parent="WalkPoints" instance=ExtResource( 3 )]
+position = Vector2( 345, 511 )
+
+[node name="Node17" parent="WalkPoints" instance=ExtResource( 3 )]
+position = Vector2( 690, 513 )
+
+[node name="Node5" parent="WalkPoints" instance=ExtResource( 3 )]
+position = Vector2( 177, 464 )
+
+[node name="Node6" parent="WalkPoints" instance=ExtResource( 3 )]
+position = Vector2( 845, 149 )
+
+[node name="Node9" parent="WalkPoints" instance=ExtResource( 3 )]
+position = Vector2( 843, 461 )
+
+[node name="Node10" parent="WalkPoints" instance=ExtResource( 3 )]
+position = Vector2( 510, 152 )
+
+[node name="Node11" parent="WalkPoints" instance=ExtResource( 3 )]
+position = Vector2( 508, 464 )
+
+[node name="Node3" parent="WalkPoints" instance=ExtResource( 3 )]
+position = Vector2( 110, 196 )
+
+[node name="Node4" parent="WalkPoints" instance=ExtResource( 3 )]
+position = Vector2( 108, 417 )
+
+[node name="Node7" parent="WalkPoints" instance=ExtResource( 3 )]
+position = Vector2( 918, 189 )
+
+[node name="Node18" parent="WalkPoints" instance=ExtResource( 3 )]
+position = Vector2( 109, 314 )
+
+[node name="Node19" parent="WalkPoints" instance=ExtResource( 3 )]
+position = Vector2( 917, 307 )
+
+[node name="Node8" parent="WalkPoints" instance=ExtResource( 3 )]
+position = Vector2( 916, 410 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.376471, 0.737255, 0.517647, 1 )
+position = Vector2( 302, 112 )
+
+[node name="EnemyManager" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 6 )
+Player = NodePath("../Player")
+WalkNodes = NodePath("../WalkPoints")
+
+[node name="Enemy2" parent="EnemyManager" instance=ExtResource( 5 )]
+position = Vector2( 100, 85 )
+
+[node name="Enemy3" parent="EnemyManager" instance=ExtResource( 5 )]
+position = Vector2( 104, 292 )
+
+[node name="Enemy4" parent="EnemyManager" instance=ExtResource( 5 )]
+position = Vector2( 102, 467 )
+
+[node name="Enemy5" parent="EnemyManager" instance=ExtResource( 5 )]
+position = Vector2( 926, 88 )
+
+[node name="Enemy6" parent="EnemyManager" instance=ExtResource( 5 )]
+position = Vector2( 916, 280 )
+
+[node name="Enemy7" parent="EnemyManager" instance=ExtResource( 5 )]
+position = Vector2( 914, 501 )

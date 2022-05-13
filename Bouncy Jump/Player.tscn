@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://RigidBody.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=5]
+resource_local_to_scene = true
+
+[sub_resource type="SphereMesh" id=4]
+resource_local_to_scene = true
+material = SubResource( 5 )
+radius = 0.2
+height = 0.4
+
+[sub_resource type="SphereShape" id=2]
+radius = 0.146533
+
+[node name="Player" type="RigidBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0105035, 0.429744, -0.299309 )
+mass = 0.02
+gravity_scale = 2.0
+continuous_cd = true
+can_sleep = false
+script = ExtResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.000492334, 0.0051434, -0.0019393 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_Player_body_shape_entered"]
