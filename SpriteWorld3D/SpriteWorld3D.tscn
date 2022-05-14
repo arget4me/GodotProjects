@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GeneratedMesh.tscn" type="PackedScene" id=2]
+
+[node name="SpriteWorld3D" type="Spatial"]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 3, 5 )
+
+[node name="GeneratedMesh" parent="." instance=ExtResource( 2 )]
