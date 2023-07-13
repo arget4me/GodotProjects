@@ -20,27 +20,27 @@ func AddPlane(Origin : Vector3, Normal : Vector3, Size : Vector2 = Vector2.ONE, 
 	
 	#Top Triangle
 	Vertices.push_back(Origin - Tangent * 0.5 + Bitangent * 0.5)
-	UVs.push_back(Vector2(0, 1))
+	UVs.push_back(Vector2(0, 1) * Size)
 	
 	
 	Vertices.push_back(Origin + Tangent * 0.5 + Bitangent * 0.5)
-	UVs.push_back(Vector2(1, 1))
+	UVs.push_back(Vector2(1, 1) * Size)
 	
 	
 	Vertices.push_back(Origin - Tangent * 0.5 - Bitangent * 0.5)
-	UVs.push_back(Vector2(0, 0))
+	UVs.push_back(Vector2(0, 0) * Size)
 	
 	#Bottom Triangle
 	Vertices.push_back(Origin - Tangent * 0.5 - Bitangent * 0.5)
-	UVs.push_back(Vector2(0, 0))
+	UVs.push_back(Vector2(0, 0) * Size)
 	
 	
 	Vertices.push_back(Origin + Tangent * 0.5 + Bitangent * 0.5)
-	UVs.push_back(Vector2(1, 1))
+	UVs.push_back(Vector2(1, 1) * Size)
 	
 	
 	Vertices.push_back(Origin + Tangent * 0.5 - Bitangent * 0.5)
-	UVs.push_back(Vector2(1, 0))
+	UVs.push_back(Vector2(1, 0) * Size)
 
 func AddCube(Origin : Vector3, Bounds : Vector3):
 	AddPlane(Origin, Vector3(0, 0, 1), Vector2(Bounds.z, Bounds.y), Bounds.x / 2)
@@ -52,7 +52,7 @@ func AddCube(Origin : Vector3, Bounds : Vector3):
 #	
 
 func _ready():
-	AddCube(Vector3(0, 0, 0), Vector3(3,2,4))
+	AddCube(Vector3(0, 0, 0), Vector3(1,1,1))
 	AddCube(Vector3(3, 2, -3), Vector3(3,2,4))
 	
 	var st = SurfaceTool.new()
@@ -69,7 +69,7 @@ func _ready():
 	mesh = NewMesh
 
 func _process(delta):
-	rotate_x(0.1 * delta)
-	rotate_y(delta)
-	rotate_z( 0.7* delta)
+#	rotate_x(0.1 * delta)
+#	rotate_y(delta)
+#	rotate_z( 0.7* delta)
 	pass
